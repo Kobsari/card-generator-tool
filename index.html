@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Card Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-container">
+        <header class="header">
+            <h1>Random Test Credit Card Numbers Generator</h1>
+            <p>Generate random test credit card numbers for testing, development, validation and/or verification purposes.</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn" id="basicTab">Basic</button>
+            <button class="tab-btn active" id="advanceTab">Advance</button>
+        </div>
+
+        <div class="generator-body">
+            <!-- ផ្នែកបញ្ជា (ឆ្វេង) -->
+            <section class="form-section">
+                <!-- ទម្រង់ Basic (លាក់ទុកជាមុន) -->
+                <div id="basic-form" class="hidden">
+                    <div class="input-group">
+                        <label for="basic-bin">BIN</label>
+                        <input type="text" id="basic-bin" value="400000xxxxxxxxxx">
+                    </div>
+                     <div class="input-group">
+                        <label for="basic-quantity">QUANTITY</label>
+                        <select id="basic-quantity">
+                            <option>10</option>
+                            <option>50</option>
+                            <option selected>100</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- ទម្រង់ Advance (បង្ហាញជាមុន) -->
+                <div id="advance-form">
+                    <div class="input-group">
+                        <label for="cardBrand">CARD BRAND</label>
+                        <select id="cardBrand">
+                            <option value="mastercard">Mastercard</option>
+                            <option value="visa">Visa</option>
+                            <option value="amex">American Express</option>
+                            <option value="discover">Discover</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="bin">BIN</label>
+                        <input type="text" id="bin">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="format">FORMAT</label>
+                        <select id="format">
+                            <option value="PIPE">PIPE</option>
+                            <option value="CSV">CSV</option>
+                            <option value="JSON">JSON</option>
+                            <option value="XML">XML</option>
+                        </select>
+                    </div>
+                    
+                    <div class="toggle-control-group">
+                        <div class="toggle-item"><label class="toggle-switch"><input type="checkbox" id="toggleDate" checked><span class="slider"></span></label><label for="toggleDate">DATE</label></div>
+                        <div class="toggle-item"><label class="toggle-switch"><input type="checkbox" id="toggleCvv" checked><span class="slider"></span></label><label for="toggleCvv">CVV</label></div>
+                        <div class="toggle-item"><label class="toggle-switch"><input type="checkbox" id="toggleMoney"><span class="slider"></span></label><label for="toggleMoney">MONEY</label></div>
+                    </div>
+
+                    <div class="sub-inputs">
+                        <div class="input-row" id="date-inputs">
+                            <div class="input-group"><label for="expMonth">EXPIRATION MONTH</label><select id="expMonth"><option value="random">Random</option></select></div>
+                            <div class="input-group"><label for="expYear">EXPIRATION YEAR</label><select id="expYear"></select></div>
+                        </div>
+                        <div class="input-row" id="cvv-input">
+                            <div class="input-group"><label for="cvv">CVV</label><input type="text" id="cvv" placeholder="Leave blank to randomize"></div>
+                            <div class="input-group"><label for="quantity">QUANTITY</label><select id="quantity"><option>10</option><option>50</option><option selected>100</option><option>500</option></select></div>
+                        </div>
+                        <div class="input-row hidden" id="money-inputs">
+                            <div class="input-group"><label for="currency">CURRENCY</label><select id="currency"></select></div>
+                            <div class="input-group"><label for="balance">BALANCE</label><select id="balance"><option>500-1000</option></select></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="generateBtn"><i class="fa-solid fa-gear"></i> Generate</button>
+            </section>
+
+            <!-- ផ្នែកបង្ហាញលទ្ធផល (ស្តាំ) -->
+            <section class="output-container">
+                <div id="results-table-container" class="table-container">
+                    <!-- តារាងនឹងត្រូវបានបង្កើតនៅទីនេះដោយ JavaScript -->
+                </div>
+                <div class="output-actions">
+                    <button id="copyBtn">Copy</button>
+                    <button id="resetBtn">Reset</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
